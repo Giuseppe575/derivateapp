@@ -178,32 +178,182 @@ const exercises = {
 
 const theoryContent = {
     derivate: {
-        intro: "Le derivate misurano la pendenza istantanea di una funzione.",
-        rules: [
-            "\\( \\frac{d}{dx} x^n = n x^{n-1} \\)",
-            "\\( (f+g)' = f' + g' \\)",
-            "\\( (fg)' = f'g + fg' \\)",
-            "\\( (f \\circ g)' = (f' \\circ g) \\cdot g' \\)"
+        overview: [
+            `Le derivate sono come una lente d'ingrandimento che ci permette di osservare il comportamento di una funzione in un punto preciso. Se una funzione descrive un fenomeno – l'altezza di un razzo, la temperatura di un metallo o il costo di produzione di un'azienda – la derivata ci dice come quel fenomeno sta cambiando proprio in quell'istante. È il ritmo del cambiamento, la velocità con cui il grafico sale o scende, il modo in cui una curva si piega mentre la osserviamo.`,
+            `Per immaginare una derivata pensa a una strada di montagna. La funzione è il percorso che stiamo seguendo, mentre la derivata è l'inclinazione della strada sotto le nostre ruote. Una pendenza positiva indica che stiamo salendo, una negativa che stiamo scendendo. Se la derivata vale zero, la strada è in piano: siamo arrivati su un valico o in un punto di svolta. Questa visione geometrica lega le derivate alla tangente, la retta che tocca il grafico senza attraversarlo: la sua inclinazione coincide con il valore della derivata.`,
+            `Dal punto di vista analitico la derivata nasce dal limite del rapporto incrementale. Consideriamo due punti vicini della funzione, distanti di un piccolissimo \( h \). Il rapporto \( \frac{f(x+h) - f(x)}{h} \) misura quanto cambia il valore della funzione rispetto alla variazione di input. Facendo tendere \( h \) a zero chiediamo: "Qual è la variazione istantanea?". Se il limite esiste otteniamo \( f'(x) \), la derivata di \( f \) nel punto \( x \). È come passare da una fotografia sfocata a una nitidissima, eliminando tutti i movimenti superflui.`,
+            `La derivata non esiste sempre. Spigoli, cuspidi o buchi nel grafico rompono la continuità necessaria. Pensiamo al valore assoluto \( f(x) = |x| \): la pendenza a sinistra dello zero è -1, quella a destra è +1, ma al centro non esiste un unico valore di pendenza. Questo ricorda che la derivata è uno strumento delicato: prima di usarla dobbiamo verificare che la funzione sia abbastanza liscia e che il limite sia definito.`,
+            `Una volta che la derivata è definita possiamo interpretarla in mille modi. In fisica è la velocità (derivata dello spostamento), poi l'accelerazione (derivata della velocità). In economia indica il margine di guadagno quando produciamo una unità in più. In biologia descrive la crescita istantanea di una popolazione batterica. In tutti i casi, la derivata racconta come una quantità reagisce a una piccola perturbazione.`,
+            `Ricordiamo anche che le derivate funzionano come un linguaggio: attraverso loro possiamo risolvere equazioni, trovare massimi e minimi, costruire approssimazioni locali tramite polinomi di Taylor. È il ponte che unisce l'analisi dei grafici alla comprensione profonda dei processi dinamici, permettendoci di prevedere e controllare ciò che accade.`
         ],
-        example: "Esempio: per \\( f(x) = (3x^2+1)\\sin x \\) applica la regola del prodotto e la catena."
+        sections: [
+            {
+                title: "Dal rapporto incrementale alla tangente",
+                paragraphs: [
+                    `Per capire perché il limite \( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \) è così importante immagina di voler misurare la velocità di un'auto senza un tachimetro. Potresti segnare su un taccuino le distanze percorse ogni secondo e calcolare quanto spazio hai coperto in un intervallo \( h \). Più restringi l'intervallo, più il tuo valore si avvicina alla velocità reale. Questo processo di raffinamento è esattamente ciò che fa il limite nella definizione di derivata.`,
+                    `Dal punto di vista geometrico il limite crea la tangente alla curva. Prendiamo due punti \( A(x, f(x)) \) e \( B(x+h, f(x+h)) \). La retta secante che li congiunge ha pendenza pari al rapporto incrementale. Quando \( h \) diventa sempre più piccolo, il punto B scivola verso A e la secante ruota fino a diventare tangente. La derivata è la pendenza di quella tangente, la migliore approssimazione lineare della funzione vicino al punto considerato.`
+                ],
+                list: [
+                    `Scrivi il rapporto incrementale \( \frac{f(x+h) - f(x)}{h} \)` ,
+                    `Semplifica se possibile, sfruttando la struttura della funzione` ,
+                    `Calcola il limite per \( h \to 0 \) per ottenere \( f'(x) \)` ,
+                    `Interpreta il risultato come pendenza della tangente o velocità istantanea`
+                ]
+            },
+            {
+                title: "Regole operative e strategie",
+                paragraphs: [
+                    `Sebbene la definizione di derivata passi dai limiti, nella pratica quotidiana utilizziamo un set di regole che rende i calcoli rapidi. Sono come gli attrezzi di una cassetta: ognuno serve a risolvere un tipo di problema e spesso li usiamo in combinazione. Ricordando poche formule fondamentali possiamo derivare polinomi, funzioni trigonometriche, esponenziali, logaritmi e loro composizioni.`,
+                    `Le regole si basano sulle proprietà del limite e dell'algebra delle funzioni. Ad esempio la derivata della somma è la somma delle derivate, la derivata del prodotto \( (fg)' = f'g + fg' \) segue la logica della distribuzione delle variazioni tra i due fattori, mentre la regola della catena \( (f \circ g)'(x) = f'(g(x)) \cdot g'(x) \) ci ricorda che quando un processo è composto da più fasi dobbiamo moltiplicare le velocità di ciascun passaggio.`
+                ],
+                list: [
+                    `Regola della potenza: \( \frac{d}{dx} x^n = n x^{n-1} \)` ,
+                    `Derivate fondamentali: \( (e^x)' = e^x \), \( (\ln x)' = \frac{1}{x} \), \( (\sin x)' = \cos x \), \( (\cos x)' = -\sin x \)` ,
+                    `Regola del prodotto e del quoziente per combinare funzioni` ,
+                    `Regola della catena per funzioni composte` ,
+                    `Uso di trasformazioni (ad esempio logaritmi) per semplificare casi complessi`
+                ]
+            },
+            {
+                title: "Applicazioni e interpretazioni",
+                paragraphs: [
+                    `Le derivate ci guidano nell'identificazione di massimi e minimi: punti in cui la funzione cambia direzione. Analizzando \( f'(x) = 0 \) e studiandone il segno possiamo capire se un punto è un picco, una valle o un flesso. Con la derivata seconda \( f''(x) \) valutiamo quanto la curva si incurva, distinguendo concavità e convessità e prevedendo la stabilità di un sistema.`,
+                    `Oltre alla geometria, la derivata appare quando vogliamo ottimizzare. In economia significa trovare il prezzo che massimizza il profitto; in ingegneria scegliere la forma di un componente che riduce la resistenza; in informatica addestrare una rete neurale aggiornando i pesi lungo la direzione del gradiente. Ogni volta che cerchiamo "la migliore scelta locale", le derivate sono lo strumento che ci indica la direzione.`
+                ],
+                list: [
+                    `Ottimizzazione di funzioni: analisi di \( f'(x) = 0 \) e studio del segno di \( f''(x) \)` ,
+                    `Approssimazioni locali tramite polinomi di Taylor` ,
+                    `Studio del moto: posizione, velocità, accelerazione` ,
+                    `Analisi di sensibilità: come cambia un risultato al variare di un parametro` ,
+                    `Controllo di sistemi dinamici e previsione di trend`
+                ]
+            }
+        ],
+        keyTakeaways: [
+            `La derivata è il limite del rapporto incrementale e misura il cambiamento istantaneo.`,
+            `La pendenza della tangente al grafico nel punto \( x \) coincide con \( f'(x) \).`,
+            `Le regole operative (somma, prodotto, catena) permettono di derivare funzioni complesse.`,
+            `La derivata seconda descrive la curvatura e aiuta a classificare massimi, minimi e flessi.`,
+            `Comprendere le derivate significa saper leggere e controllare fenomeni dinamici del mondo reale.`
+        ]
     },
     limiti: {
-        intro: "I limiti descrivono il comportamento di una funzione quando la variabile si avvicina a un punto.",
-        rules: [
-            "\\( \\lim_{x\\to 0} \\frac{\\sin x}{x} = 1 \\)",
-            "\\( \\lim_{x\\to 0} \\frac{e^x - 1}{x} = 1 \\)",
-            "Se il numeratore ha grado minore del denominatore il limite all'infinito è 0"
+        overview: [
+            `I limiti rispondono a una domanda apparentemente semplice: "Cosa succede a una funzione quando ci avviciniamo a un certo punto?". Non sempre possiamo sostituire direttamente il valore nella funzione: potremmo incontrare zero al denominatore, espressioni non definite o comportamenti che esplodono. Il limite ci consente di guardare il comportamento della funzione senza fermarci davanti agli ostacoli, come se potessimo spiare oltre un muro.`,
+            `Immagina di osservare un fiume che si avvicina a una cascata. Non possiamo vedere cosa succede nel punto esatto dove l'acqua cade, ma possiamo osservare come scorre sempre più velocemente mentre ci avviciniamo al bordo. Il limite descrive proprio questa tendenza: anche se il valore finale non è raggiungibile, possiamo capire a cosa tende la funzione.`,
+            `Dal punto di vista formale scriviamo \( \lim_{x \to a} f(x) = L \) quando i valori di \( f(x) \) si avvicinano arbitrariamente a \( L \) man mano che \( x \) si avvicina ad \( a \). È come dire che possiamo rendere la differenza tra \( f(x) \) e \( L \) piccola quanto vogliamo, purché scegliamo \( x \) sufficientemente vicino ad \( a \). Questo concetto di "vicinanza controllata" è alla base dell'analisi matematica.`,
+            `I limiti permettono di classificare le discontinuità. Se la funzione tende a valori diversi da sinistra e da destra abbiamo una discontinuità di prima specie; se tende all'infinito incontriamo una discontinuità di seconda specie. Comprendere la natura di questi salti è essenziale per sapere come proseguire con lo studio di funzione o con l'integrazione.`,
+            `Molte strategie pratiche ci aiutano a calcolare i limiti: scomporre i polinomi, razionalizzare espressioni con radici, riconoscere forme notevoli come \( \frac{\sin x}{x} \) o \( (1+x)^{1/x} \). Quando la forma rimane indeterminata, possiamo ricorrere a sviluppi di Taylor o alla regola di de l'Hospital, che sfrutta le derivate per trasformare un problema difficile in uno più semplice.`,
+            `Pensare ai limiti come a un'arte dell'avvicinamento ci aiuta a creare metafore efficaci: siamo esploratori che desiderano conoscere la temperatura alla soglia di un vulcano, architetti che valutano lo sforzo su una trave in un punto critico, programmatori che verificano la stabilità numerica di un algoritmo. Il limite è la risposta raffinata a tutte queste curiosità.`
         ],
-        example: "Esempio: per \\( \\lim_{x\\to 0} \\frac{\\ln(1+x)}{x} \\) usa lo sviluppo di Taylor." 
+        sections: [
+            {
+                title: "Comprendere le forme indeterminate",
+                paragraphs: [
+                    `Le forme indeterminate nascono quando sostituendo direttamente otteniamo espressioni come \( \frac{0}{0} \), \( \frac{\infty}{\infty} \), \( 0 \cdot \infty \) o \( 1^{\infty} \). Sono segnali che la funzione nasconde una struttura più fine che dobbiamo svelare. È come guardare un'ombra: senza luce aggiuntiva non distinguiamo la figura sottostante, ma con un nuovo punto di vista tutto diventa chiaro.`,
+                    `Per esempio, nel limite \( \lim_{x \to 0} \frac{\sin x}{x} \) appare la forma \( \frac{0}{0} \). Usando lo sviluppo di Taylor \( \sin x = x - \frac{x^3}{6} + o(x^3) \) vediamo che il primo termine non nullo nel numeratore è proprio \( x \), che si semplifica con il denominatore. Il risultato finale è 1. Questo approccio funziona per molte funzioni elementari e ci insegna a guardare oltre la superficie.`
+                ],
+                list: [
+                    `Scomposizione algebrica e fattorizzazione` ,
+                    `Razionalizzazione di radici e denominatori` ,
+                    `Uso di sviluppi di Taylor per isolare il termine dominante` ,
+                    `Applicazione della regola di de l'Hospital quando è presente la forma \( \frac{0}{0} \) o \( \frac{\infty}{\infty} \)`
+                ]
+            },
+            {
+                title: "Limiti all'infinito e comportamento asintotico",
+                paragraphs: [
+                    `Quando \( x \) cresce senza limiti vogliamo conoscere la tendenza della funzione. Polinomi e razionali si analizzano confrontando i gradi: se il grado del numeratore è minore di quello del denominatore il limite è zero, se è maggiore tende a infinito (positivo o negativo a seconda dei coefficienti), mentre se sono uguali il limite è il rapporto dei coefficienti principali. Questa analisi ci permette di identificare eventuali asintoti orizzontali o obliqui.`,
+                    `Funzioni esponenziali e logaritmiche introducono scenari diversi. L'esponenziale domina i polinomi: \( \lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \). Il logaritmo cresce più lentamente di qualsiasi potenza: \( \lim_{x \to +\infty} \frac{\ln x}{x^\alpha} = 0 \) per \( \alpha > 0 \). Ricordare queste gerarchie è come avere una classifica delle velocità di crescita: ci dice quale termine "vince" quando \( x \) diventa enorme.`
+                ],
+                list: [
+                    `Asintoti orizzontali: \( y = L \) se \( \lim_{x \to \pm\infty} f(x) = L \)` ,
+                    `Asintoti obliqui: \( y = mx + q \) trovati calcolando \( m = \lim_{x \to \pm\infty} \frac{f(x)}{x} \)` ,
+                    `Classifica delle crescite: logaritmi < potenze < esponenziali` ,
+                    `Attenzione ai limiti oscillanti (ad esempio \( \sin x \) all'infinito) dove il limite non esiste`
+                ]
+            },
+            {
+                title: "Applicazioni dei limiti",
+                paragraphs: [
+                    `I limiti sono il fondamento del calcolo differenziale e integrale. Definiscono la continuità, le derivate e gli integrali. Ad esempio, l'integrale definito \( \int_a^b f(x)\,dx \) nasce come limite di somme di Riemann: approssimiamo l'area con rettangoli sempre più stretti finché la somma converge al valore esatto. Senza limiti non potremmo formalizzare queste idee intuitive.`,
+                    `Nelle scienze applicate i limiti descrivono comportamenti di equilibrio o condizioni di stabilità. Un ingegnere li usa per capire come risponde una struttura a sollecitazioni estreme, un economista per studiare l'andamento di un mercato nel lungo periodo, un informatico per analizzare la complessità di un algoritmo quando i dati crescono. Il limite diventa così un binocolo per osservare il futuro o il comportamento in condizioni estreme.`
+                ],
+                list: [
+                    `Definizione di continuità: \( f \) è continua in \( a \) se \( \lim_{x \to a} f(x) = f(a) \)` ,
+                    `Fondamento di derivate e integrali` ,
+                    `Studio degli asintoti nello studio di funzione` ,
+                    `Analisi di stabilità e comportamento a lungo termine` ,
+                    `Controllo di convergenza in serie e successioni`
+                ]
+            }
+        ],
+        keyTakeaways: [
+            `Il limite descrive la tendenza di una funzione avvicinandosi a un punto o all'infinito.`,
+            `Le forme indeterminate richiedono manipolazioni algebriche o strumenti come Taylor e de l'Hospital.`,
+            `Comprendere la crescita relativa delle funzioni aiuta a studiare i limiti all'infinito.`,
+            `I limiti classificano le discontinuità e guidano lo studio completo di una funzione.`,
+            `Senza limiti non esisterebbero derivate, integrali e molte applicazioni quantitative.`
+        ]
     },
     funzioni: {
-        intro: "Lo studio di funzione combina derivate, limiti e analisi del grafico.",
-        rules: [
-            "Il dominio determina dove la funzione è definita.",
-            "Gli zeri della derivata prima separano intervalli di crescita e decrescita.",
-            "L'analisi della derivata seconda distingue concavità e convessità."
+        overview: [
+            `Studiare una funzione significa raccontare la sua storia completa: dove vive, come si muove, quali picchi raggiunge, come si comporta all'infinito. È un viaggio che combina limiti, derivate e osservazione del grafico per ottenere una fotografia fedele del fenomeno modellato. Ogni funzione è come un personaggio con le sue caratteristiche: dominio, segno, crescenza, concavità.`,
+            `Il dominio rappresenta il territorio in cui la funzione può essere valutata. Per \( f(x) = \frac{1}{x-2} \) dobbiamo escludere il valore 2 per evitare la divisione per zero; per \( g(x) = \sqrt{x-1} \) consideriamo solo \( x \ge 1 \). È come stabilire dove una strada è percorribile: alcuni tratti potrebbero essere chiusi per lavori o franati.`,
+            `Una volta fissato il dominio analizziamo il segno per capire dove la funzione assume valori positivi o negativi. Questo passaggio è utile per interpretare soluzioni di equazioni o per comprendere fenomeni reali, ad esempio quando una quantità rappresenta un guadagno (positivo) o una perdita (negativo). La tabella dei segni è uno strumento visuale che mette in relazione gli zeri della funzione con il comportamento negli intervalli adiacenti.`,
+            `Le derivate entrano in scena per descrivere la dinamica. La derivata prima \( f'(x) \) indica gli intervalli di crescita (quando è positiva) e di decrescita (quando è negativa). Gli zeri di \( f'(x) \) sono candidati a massimi e minimi relativi, proprio come colline e valli di un paesaggio. La derivata seconda \( f''(x) \) rivela concavità e convessità, informandoci se la curva "sorride" o "aggrotta le sopracciglia" in un dato intervallo.`,
+            `Analizzare i limiti agli estremi del dominio o all'infinito ci aiuta a trovare asintoti e a prevedere il comportamento lontano dall'origine. Se \( f(x) \) tende a un valore finito, avremo un asintoto orizzontale; se si avvicina a una retta obliqua, calcoliamo \( m \) e \( q \) per descriverla. In presenza di punti esclusi dal dominio valutiamo i limiti laterali per capire se la funzione diverge o se possiamo estenderla per continuità.`,
+            `Infine, sintetizziamo tutte le informazioni in un grafico qualitativo. È come montare un film a partire da diverse scene: mettiamo insieme dominio, segno, derivata, derivata seconda, asintoti e punti notevoli per ottenere un quadro coerente. Questo processo non solo permette di disegnare la funzione, ma anche di interpretarla nel contesto applicativo da cui nasce.`
         ],
-        example: "Esempio: per \\( f(x) = \\frac{x^2+1}{x-1} \\) calcola dominio, limiti agli estremi e derivata per tracciare il grafico." 
+        sections: [
+            {
+                title: "Dalla tabella del segno al grafico",
+                paragraphs: [
+                    `La tabella del segno è uno strumento potente. Per costruirla individuiamo gli zeri della funzione e i punti che rendono nullo il denominatore o l'argomento di una radice. Dividiamo il dominio in intervalli e scegliamo un valore di test per ciascuno. Il segno del risultato ci dice se il grafico sta sopra o sotto l'asse delle ascisse. È come accendere luci verdi dove la funzione è positiva e rosse dove è negativa.`,
+                    `Questa analisi prepara il terreno per la derivata prima. Quando \( f'(x) > 0 \) la funzione sale, quando \( f'(x) < 0 \) scende. In corrispondenza di un cambio di segno da positivo a negativo troviamo un massimo relativo; da negativo a positivo un minimo relativo. Annotando questi passaggi costruiamo una vera e propria mappa dei rilievi del grafico.`
+                ],
+                list: [
+                    `Trova zeri e punti critici del dominio` ,
+                    `Dividi il dominio in intervalli e valuta il segno della funzione` ,
+                    `Analizza il segno della derivata prima per determinare crescita e decrescita` ,
+                    `Combina le informazioni per prevedere la forma del grafico`
+                ]
+            },
+            {
+                title: "Concavità, flessi e interpretazioni geometriche",
+                paragraphs: [
+                    `La derivata seconda racconta come cambia la pendenza. Se \( f''(x) > 0 \) la funzione è convessa: il grafico sembra una ciotola che raccoglie acqua. Se \( f''(x) < 0 \) è concava: appare come un arco. Quando \( f''(x) = 0 \) e cambia segno siamo davanti a un punto di flesso, un tratto in cui la curva cambia curvatura. È come passare da una salita a una discesa dolce, come se la strada cambiasse inclinazione.`,
+                    `Interpretare la concavità è utile anche in ottimizzazione: una funzione concava con derivata prima nulla rappresenta un massimo globale, mentre una convessa indica un minimo globale. Questi concetti sono fondamentali in economia, dove il grafico del profitto o dei costi marginali dipende dalla curvatura, e in fisica, dove la forma delle traiettorie rivela la presenza di forze acceleranti o deceleranti.`
+                ],
+                list: [
+                    `Calcola \( f''(x) \) e analizza il segno sugli intervalli del dominio` ,
+                    `Individua i punti in cui \( f''(x) = 0 \) o non esiste e verifica il cambio di concavità` ,
+                    `Classifica massimi, minimi e flessi combinando \( f' \) e \( f'' \)` ,
+                    `Traccia qualitativamente il grafico annotando concavità e tangenti`
+                ]
+            },
+            {
+                title: "Mettere tutto insieme: un esempio completo",
+                paragraphs: [
+                    `Consideriamo \( f(x) = \frac{x^2+1}{x-1} \). Il dominio esclude \( x = 1 \). Gli zeri si trovano risolvendo \( x^2 + 1 = 0 \): non esistono reali, quindi la funzione non interseca l'asse delle ascisse. Calcoliamo la derivata prima \( f'(x) = \frac{x^2 - 2x - 1}{(x-1)^2} \). Ponendola uguale a zero otteniamo i punti critici \( x = 1 \pm \sqrt{2} \). Studiamo il segno di \( f' \) per capire dove cresce o decresce.`,
+                    `I limiti per \( x \to 1^- \) e \( x \to 1^+ \) rivelano un asintoto verticale: il valore tende a \( -\infty \) da sinistra e a \( +\infty \) da destra. Per \( x \to \pm\infty \) eseguiamo la divisione tra polinomi e troviamo l'asintoto obliquo \( y = x + 1 \). Combinando queste informazioni possiamo disegnare un grafico coerente, riconoscere le zone di crescita, identificare il flesso e discutere il comportamento complessivo della funzione.`
+                ],
+                list: [
+                    `Dominio: \( \mathbb{R} \setminus \{1\} \)` ,
+                    `Derivata prima e punti critici: \( x = 1 \pm \sqrt{2} \)` ,
+                    `Asintoto verticale: \( x = 1 \) con limiti di segno opposto` ,
+                    `Asintoto obliquo: \( y = x + 1 \)` ,
+                    `Nessun punto di intersezione con l'asse \( x \)`
+                ]
+            }
+        ],
+        keyTakeaways: [
+            `Lo studio di funzione è un processo integrato che combina dominio, segno, limiti e derivate.`,
+            `La derivata prima e la seconda offrono una lettura dinamica della crescita e della curvatura.`,
+            `Gli asintoti descrivono il comportamento lontano dai punti regolari o esclusi.`,
+            `Tabelle dei segni e analisi dei punti critici guidano la rappresentazione grafica.`,
+            `Integrare le informazioni numeriche con interpretazioni concrete rende la teoria più memorabile.`
+        ]
     }
 };
 
@@ -557,14 +707,22 @@ function renderTheory(topicKey) {
     const container = document.getElementById('theory-content');
     if (!content || !container) return;
 
+    const overview = (content.overview || []).map(paragraph => `<p>${paragraph}</p>`).join('');
+    const sections = (content.sections || []).map(section => `
+        <section class="theory-subsection">
+            <h4>${section.title}</h4>
+            ${(section.paragraphs || []).map(text => `<p>${text}</p>`).join('')}
+            ${section.list ? `<ul>${section.list.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+        </section>
+    `).join('');
+    const takeaways = (content.keyTakeaways || []).map(point => `<li>${point}</li>`).join('');
+
     container.innerHTML = `
         <article class="theory-card">
             <h3>${exercises[topicKey].label}</h3>
-            <p>${content.intro}</p>
-            <h4>Regole essenziali</h4>
-            <ul>${content.rules.map(rule => `<li>${rule}</li>`).join('')}</ul>
-            <h4>Esempio guidato</h4>
-            <p>${content.example}</p>
+            ${overview}
+            ${sections}
+            ${takeaways ? `<h4>Idee chiave da ricordare</h4><ul>${takeaways}</ul>` : ''}
         </article>
     `;
 
@@ -584,18 +742,35 @@ function handleChatSubmit(event) {
     if (!input || !responses) return;
 
     const question = input.value.trim();
-    if (!question) return;
+    if (!question) {
+        const reminder = document.createElement('div');
+        reminder.className = 'chat-bubble';
+        reminder.innerHTML = `
+            <h4>Assistente GPT</h4>
+            <p>Scrivi il tuo dubbio o una parola chiave, ad esempio "limiti" o "studio di funzione", e ti risponderò subito.</p>
+        `;
+        responses.prepend(reminder);
+        return;
+    }
 
     const reply = buildChatbotReply(question);
 
-    const bubble = document.createElement('div');
-    bubble.className = 'chat-bubble';
-    bubble.innerHTML = `
+    const userBubble = document.createElement('div');
+    userBubble.className = 'chat-bubble user';
+    userBubble.innerHTML = `
+        <h4>Tu</h4>
+        <p>${question}</p>
+    `;
+
+    const assistantBubble = document.createElement('div');
+    assistantBubble.className = 'chat-bubble';
+    assistantBubble.innerHTML = `
         <h4>Assistente GPT</h4>
         <p>${reply}</p>
     `;
 
-    responses.prepend(bubble);
+    responses.prepend(assistantBubble);
+    responses.prepend(userBubble);
     input.value = '';
 }
 

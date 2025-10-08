@@ -414,8 +414,22 @@ body.dark-theme .feedback-form textarea {
     border-left: 4px solid var(--primary);
 }
 
+.chat-bubble.user {
+    background: rgba(10, 185, 149, 0.18);
+    border-left-color: #07a083;
+}
+
 .chat-bubble h4 {
     margin: 0 0 6px;
+}
+
+.theory-card section.theory-subsection {
+    margin-top: 20px;
+}
+
+.theory-card section.theory-subsection ul {
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .progress-grid {
