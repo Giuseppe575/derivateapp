@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DerivApp - Le Regole delle Derivate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+
+    <header>
+        <h1>DerivApp 🧠</h1>
+        <nav>
+            <button onclick="showSection('rules')">📜 Regole</button>
+            <button onclick="showSection('simple')">⭐ Semplici</button>
+            <button onclick="showSection('medium')">🔶 Medi</button>
+            <button onclick="showSection('complex')">🟥 Complessi</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="rules" class="app-section active">
+            <h2>📜 Regole Fondamentali e Spiegazioni</h2>
+            
+            <div class="rule-card">
+                <h3>Costante</h3>
+                <p>Formula: \( \frac{d}{dx} c = 0 \)</p>
+                <p class="explanation">La derivata di qualsiasi numero costante ($c$) è sempre zero. Una retta orizzontale ha pendenza zero.</p>
+            </div>
+
+            <div class="rule-card">
+                <h3>Potenza</h3>
+                <p>Formula: \( \frac{d}{dx} x^n = n \cdot x^{n-1} \)</p>
+                <p class="explanation">Si abbassa l'esponente come coefficiente e si diminuisce l'esponente di uno.</p>
+            </div>
+            
+            <div class="rule-card">
+                <h3>Esponenziale (Base $e$)</h3>
+                <p>Formula: \( \frac{d}{dx} e^x = e^x \)</p>
+                <p class="explanation">L'unica funzione (a meno di una costante moltiplicativa) la cui derivata è sé stessa.</p>
+            </div>
+            
+            <div class="rule-card">
+                <h3>Logaritmo Naturale</h3>
+                <p>Formula: \( \frac{d}{dx} \ln(x) = \frac{1}{x} \)</p>
+                <p class="explanation">Valida per $x > 0$.</p>
+            </div>
+            
+            <div class="rule-card">
+                <h3>Seno e Coseno</h3>
+                <p>Formule: \( \frac{d}{dx} \sin(x) = \cos(x) \quad | \quad \frac{d}{dx} \cos(x) = -\sin(x) \)</p>
+                <p class="explanation">Ricorda l'alternanza di segno.</p>
+            </div>
+            
+            <div class="rule-card special-rule">
+                <h3>Prodotto (u·v)</h3>
+                <p>Formula: \( [f(x) \cdot g(x)]' = f'(x)g(x) + f(x)g'(x) \)</p>
+                <p class="explanation">La derivata del primo per il secondo non derivato, più il primo non derivato per la derivata del secondo.</p>
+            </div>
+            
+            <div class="rule-card special-rule">
+                <h3>Quoziente (u/v)</h3>
+                <p>Formula: \( \left[\frac{f(x)}{g(x)}\right]' = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2} \)</p>
+                <p class="explanation">Derivata del numeratore per denominatore meno numeratore per derivata del denominatore, tutto fratto il denominatore al quadrato.</p>
+            </div>
+            
+            <div class="rule-card special-rule">
+                <h3>Regola della Catena (Funzione Composta)</h3>
+                <p>Formula: \( [f(g(x))]' = f'(g(x)) \cdot g'(x) \)</p>
+                <p class="explanation">Deriva la **funzione esterna** (valutata nella funzione interna), e moltiplica per la derivata della **funzione interna**.</p>
+            </div>
+        </section>
+
+        <section id="simple" class="app-section hidden">
+            <h2>⭐ Esercizi Semplici (Applicazione Diretta di una Regola)</h2>
+            <div id="simple-exercises">
+                </div>
+        </section>
+
+        <section id="medium" class="app-section hidden">
+            <h2>🔶 Esercizi Medi (Prodotto, Quoziente o Catena Semplice)</h2>
+            <div id="medium-exercises">
+                </div>
+        </section>
+
+        <section id="complex" class="app-section hidden">
+            <h2>🟥 Esercizi Complessi (Combinazione di Regole Multiple)</h2>
+            <div id="complex-exercises">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DerivApp Project.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
