@@ -670,6 +670,79 @@ const exercises = {
             }
         ]
     },
+const theoryContent = {
+    derivate: {
+        overview: [
+            `La derivata misura la rapidità con cui una funzione cambia. È come guardare la pendenza di una strada: se \( f(x) \) rappresenta l'altitudine, allora \( f'(x) \) indica quanto ripida è la salita in ogni punto.`,
+            `Dal punto di vista geometrico la derivata corrisponde al coefficiente angolare della retta tangente al grafico in un punto. Osservando intervalli sempre più piccoli, il rapporto incrementale \( \frac{f(x+h)-f(x)}{h} \) si avvicina al valore della derivata.`,
+            `Le derivate nascono anche come modello dei fenomeni reali: in fisica descrivono la velocità istantanea, in economia la variazione marginale di un costo o di un ricavo, in biologia il ritmo di crescita di una popolazione.`,
+            `Imparare a calcolare le derivate significa padroneggiare alcune regole fondamentali (lineare, prodotto, quoziente, catena) e riconoscere le derivate elementari di polinomi, esponenziali, logaritmi e funzioni trigonometriche.`,
+            `Oltre al calcolo, l'interpretazione della derivata guida l'analisi qualitativa: individuiamo massimi, minimi, monotonia e concavità combinando derivata prima e seconda.`
+        ],
+        sections: [
+            {
+                title: "Significato geometrico e applicazioni",
+                paragraphs: [
+                    `Il limite del rapporto incrementale \( \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \) definisce la derivata. Geometricamente indica la pendenza della tangente. Quando il limite esiste, il grafico appare localmente come una retta che tocca la curva senza attraversarla.`,
+                    `In fisica, se \( s(t) \) è la posizione di un punto mobile, \( s'(t) \) rappresenta la velocità istantanea. In economia la derivata del costo totale rispetto alla produzione fornisce il costo marginale. Comprendere questi legami rende più intuitivo ogni calcolo.`
+                ],
+                list: [
+                    `Un segno positivo di \( f'(x) \) indica crescita, uno negativo decrescita.`,
+                    `Derivata nulla significa tangente orizzontale: possibili massimi, minimi o flessi a tangente orizzontale.`,
+                    `Derivate laterali diverse segnalano cuspidi o angoli e quindi non derivabilità.`
+                ]
+            },
+            {
+                title: "Regole di derivazione essenziali",
+                paragraphs: [
+                    `Per calcolare rapidamente le derivate è utile tenere a portata di mano una tabella con le formule base. La linearità permette di derivare termine per termine, mentre le regole di prodotto, quoziente e catena gestiscono combinazioni più elaborate.`
+                ],
+                tables: [
+                    {
+                        title: `Derivate fondamentali`,
+                        headers: [`Funzione`, `Derivata`],
+                        rows: [
+                            [`\\( x^n \\)`, `\\( nx^{n-1} \\)`],
+                            [`\\( e^{ax} \\)`, `\\( ae^{ax} \\)`],
+                            [`\\( \\ln x \\)`, `\\( \\frac{1}{x} \\)`],
+                            [`\\( \\sin x \\)`, `\\( \\cos x \\)`],
+                            [`\\( \\cos x \\)`, `\\( -\\sin x \\)`]
+                        ],
+                        note: `Ricorda anche le derivate di \( \\tan x \\), \( \\arcsin x \\) e delle funzioni inverse più comuni.`
+                    },
+                    {
+                        title: `Regole operative`,
+                        headers: [`Situazione`, `Formula`],
+                        rows: [
+                            [`Linearità`, `\\( (af + bg)' = a f' + b g' \\)`],
+                            [`Prodotto`, `\\( (fg)' = f'g + fg' \\)`],
+                            [`Quoziente`, `\\( \\left( \\frac{f}{g} \\right)' = \\frac{f'g - fg'}{g^2} \\)`],
+                            [`Catena`, `\\( (f(g(x)))' = f'(g(x)) \\cdot g'(x) \\)`]
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Strategie per funzioni composte",
+                paragraphs: [
+                    `Quando la funzione contiene radici, logaritmi o potenze con esponente variabile è fondamentale saper scomporre l'espressione. Identifica un "interno" e un "esterno" per applicare correttamente la catena, oppure trasforma il problema con logaritmi o proprietà algebriche prima di derivare.`,
+                    `Per esempio, per \( y = (3x^2 - 1)^5 \) riconosciamo l'esterno \( u^5 \) e l'interno \( u = 3x^2 - 1 \): la derivata è \( 5(3x^2 - 1)^4 \cdot 6x \). In modo analogo, per prodotti o quozienti conviene scegliere quale parte derivare per prima in base alla semplicità.`
+                ],
+                list: [
+                    `Semplifica l'espressione prima di derivare (fattorizza, porta potenze al numeratore o denominatore).`,
+                    `Per potenze del tipo \( x^{x} \) usa il logaritmo: scrivi \( x^{x} = e^{x \ln x} \).`,
+                    `Combina le regole: un prodotto può contenere a sua volta una funzione composta.`
+                ]
+            }
+        ],
+        keyTakeaways: [
+            `La derivata nasce come limite e descrive localmente la pendenza di una funzione.`,
+            `Regole e derivate elementari permettono di affrontare espressioni complesse in modo sistematico.`,
+            `Interpretare il segno e gli zeri di \( f'(x) \) guida l'analisi di massimi, minimi e monotonia.`,
+            `Le trasformazioni algebriche facilitano la derivazione di potenze, logaritmi ed esponenziali composti.`,
+            `Derivata prima e seconda, lette insieme, offrono un quadro dinamico del comportamento della funzione.`
+        ]
+    },
     limiti: {
         overview: [
             `I limiti rispondono a una domanda apparentemente semplice: "Cosa succede a una funzione quando ci avviciniamo a un certo punto?". Non sempre possiamo sostituire direttamente il valore nella funzione: potremmo incontrare zero al denominatore, espressioni non definite o comportamenti che esplodono. Il limite ci consente di guardare il comportamento della funzione senza fermarci davanti agli ostacoli, come se potessimo spiare oltre un muro.`,
