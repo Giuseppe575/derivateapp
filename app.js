@@ -694,6 +694,50 @@ const exercises = {
                 ]
             },
             {
+                title: "Regole e limiti notevoli a colpo d'occhio",
+                paragraphs: [
+                    `Avere sott'occhio le principali proprietà permette di riconoscere rapidamente la strategia da adottare. La tabella che segue riassume le regole algebriche di base, i limiti notevoli più usati e come trasformare le forme indeterminate più comuni.`
+                ],
+                tables: [
+                    {
+                        title: `Proprietà algebriche dei limiti`,
+                        headers: [`Operazione`, `Regola`],
+                        rows: [
+                            [`Somma`, `\\( \\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x) \\)`],
+                            [`Prodotto`, `\\( \\lim_{x \\to a} f(x)g(x) = (\\lim_{x \\to a} f(x))(\\lim_{x \\to a} g(x)) \\)`],
+                            [`Quoziente`, `\\( \\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim f}{\\lim g} \\) con \\( \\lim_{x \\to a} g(x) \\neq 0 \\)`],
+                            [`Potenza`, `\\( \\lim_{x \\to a} [f(x)]^n = (\\lim_{x \\to a} f(x))^n \\)`],
+                            [`Composizione`, `Se \\( g(x) \\to L \\) e \\( f \\) è continua in \\( L \\) allora \\( \\lim_{x \\to a} f(g(x)) = f(L) \\)`]
+                        ],
+                        note: `Le proprietà valgono quando i limiti coinvolti esistono ed eventualmente sono finiti.`
+                    },
+                    {
+                        title: `Limiti notevoli da ricordare`,
+                        headers: [`Espressione`, `Valore`],
+                        rows: [
+                            [`\\( \\lim_{x \\to 0} \\frac{\\sin x}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} \\)`, `\\( \\tfrac{1}{2} \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{\\tan x}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{e^x - 1}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to +\\infty} \\(1 + \\frac{1}{x}\\)^x \\)`, `\\( e \\)`],
+                            [`\\( \\lim_{x \\to 0} (1+x)^{1/x} \\)`, `\\( e \\)`]
+                        ]
+                    },
+                    {
+                        title: `Strategie per forme indeterminate`,
+                        headers: [`Situazione`, `Trasformazione utile`],
+                        rows: [
+                            [`\\( \\frac{0}{0} \\) o \\( \\frac{\\infty}{\\infty} \\)`, `Fattorizza, semplifica o applica de l'Hospital`],
+                            [`\\( 0 \\cdot \\infty \\)`, `Raccogli o riscrivi come quoziente per applicare le regole precedenti`],
+                            [`\\( \\infty - \\infty \\)`, `Razionalizza, porta a comune denominatore o sfrutta gerarchie di crescita`],
+                            [`\\( 0^0, 1^{\\infty}, \\infty^0 \\)`, `Prendi il logaritmo, usa l'esponenziale e converti in prodotto/quoziente`],
+                            [`Radicali`, `Moltiplica per la coniugata per eliminare la radice dal numeratore o dal denominatore`]
+                        ]
+                    }
+                ]
+            },
+            {
                 title: "Limiti all'infinito e comportamento asintotico",
                 paragraphs: [
                     `Quando \( x \) cresce senza limiti vogliamo conoscere la tendenza della funzione. Polinomi e razionali si analizzano confrontando i gradi: se il grado del numeratore è minore di quello del denominatore il limite è zero, se è maggiore tende a infinito (positivo o negativo a seconda dei coefficienti), mentre se sono uguali il limite è il rapporto dei coefficienti principali. Questa analisi ci permette di identificare eventuali asintoti orizzontali o obliqui.`,
@@ -750,6 +794,21 @@ const exercises = {
                     `Dividi il dominio in intervalli e valuta il segno della funzione` ,
                     `Analizza il segno della derivata prima per determinare crescita e decrescita` ,
                     `Combina le informazioni per prevedere la forma del grafico`
+                ],
+                tables: [
+                    {
+                        title: `Schema operativo per lo studio di funzione`,
+                        headers: [`Passaggio`, `Cosa controllare`],
+                        rows: [
+                            [`Dominio`, `Escludi denominatori nulli, argomenti negativi di radici pari, logaritmi con argomento non positivo.`],
+                            [`Intersezioni`, `Calcola \( f(0) \) e risolvi \( f(x) = 0 \) per trovare eventuali incroci con gli assi.`],
+                            [`Segno`, `Costruisci la tabella dei segni usando zeri e punti critici del dominio per capire dove \( f(x) \) è positiva o negativa.`],
+                            [`Derivata prima`, `Trova \( f'(x) \), studiane il segno e individua massimi/minimi relativi e punti stazionari.`],
+                            [`Derivata seconda`, `Analizza \( f''(x) \) per concavità e flessi, verificando eventuali cambi di segno.`],
+                            [`Limiti`, `Valuta i limiti ai bordi del dominio e all'infinito per trovare asintoti e comportamenti estremi.`],
+                            [`Sintesi grafica`, `Riassumi le informazioni in un grafico qualitativo indicando punti notevoli, tratti crescenti/decrescenti e concavità.`]
+                        ]
+                    }
                 ]
             },
             {
@@ -1146,6 +1205,18 @@ function renderTheory(topicKey) {
             <h4>${section.title}</h4>
             ${(section.paragraphs || []).map(text => `<p>${text}</p>`).join('')}
             ${section.list ? `<ul>${section.list.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+            ${(section.tables || []).map(table => `
+                <div class="theory-table">
+                    ${table.title ? `<h5>${table.title}</h5>` : ''}
+                    <table>
+                        ${table.headers ? `<thead><tr>${table.headers.map(header => `<th>${header}</th>`).join('')}</tr></thead>` : ''}
+                        <tbody>
+                            ${(table.rows || []).map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}
+                        </tbody>
+                    </table>
+                    ${table.note ? `<p class="table-note">${table.note}</p>` : ''}
+                </div>
+            `).join('')}
         </section>
     `).join('');
     const takeaways = (content.keyTakeaways || []).map(point => `<li>${point}</li>`).join('');
