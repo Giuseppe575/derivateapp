@@ -1413,7 +1413,7 @@ function saveSettings() {
 // Event listeners e inizializzazione
 // ============================
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
     // Navigazione principale
     document.querySelectorAll('.nav-button').forEach(button => {
         button.addEventListener('click', () => {
@@ -1529,7 +1529,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.renderMathInElement) {
         renderMathInElement(document.body);
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
 
 function setActiveTopic(topicKey) {
     currentTopic = topicKey;
