@@ -29,6 +29,62 @@ const exercises = {
                 solution: "\\( h'(x) = -\\tfrac{1}{2}\\sin(x) - 3\\cos(x) \\)",
                 hint: "Attento al segno negativo della derivata del coseno.",
                 tag: "trigonometria"
+            },
+            {
+                id: 4,
+                question: "Deriva: \\( f(x) = 3x^5 + 4x^2 - 7 \\)",
+                answer: ["15x^4+8x", "15x^{4}+8x"],
+                solution: "\\( f'(x) = 15x^4 + 8x \\)",
+                hint: "Deriva ogni termine separatamente.",
+                tag: "potenza"
+            },
+            {
+                id: 5,
+                question: "Deriva: \\( g(x) = \\sqrt{x} \\)",
+                answer: ["1/(2\\sqrt{x})", "\\frac{1}{2\\sqrt{x}}", "1/(2x^{1/2})"],
+                solution: "Scrivi $x^{1/2}$ e usa la regola della potenza: \\( g'(x) = \\frac{1}{2\\sqrt{x}} \\)",
+                hint: "Ricorda che $\\sqrt{x} = x^{1/2}$.",
+                tag: "radice"
+            },
+            {
+                id: 6,
+                question: "Deriva: \\( h(x) = \\ln(5x) \\)",
+                answer: ["1/x", "\\frac{1}{x}"],
+                solution: "\\( h'(x) = \\frac{1}{x} \\)",
+                hint: "Usa la proprietà $\\ln(5x) = \\ln 5 + \\ln x$.",
+                tag: "logaritmo"
+            },
+            {
+                id: 7,
+                question: "Deriva: \\( f(x) = e^{2x} \\)",
+                answer: ["2e^{2x}", "2e^(2x)"],
+                solution: "Regola della catena: \\( f'(x) = 2e^{2x} \\)",
+                hint: "La derivata di $e^{ax}$ è $a e^{ax}$.",
+                tag: "esponenziale"
+            },
+            {
+                id: 8,
+                question: "Deriva: \\( g(x) = \\sin(3x) \\)",
+                answer: ["3cos(3x)", "3\\cos(3x)"],
+                solution: "\\( g'(x) = 3\\cos(3x) \\)",
+                hint: "Applica la catena: derivata di $\\sin(u)$ è $\\cos(u)u'$.",
+                tag: "trigonometria"
+            },
+            {
+                id: 9,
+                question: "Deriva: \\( h(x) = x^{-3} \\)",
+                answer: ["-3x^{-4}", "-3/x^4", "-\\frac{3}{x^4}"],
+                solution: "Regola della potenza con esponente negativo: \\( h'(x) = -3x^{-4} \\)",
+                hint: "Moltiplica per l'esponente e sottrai uno.",
+                tag: "potenza"
+            },
+            {
+                id: 10,
+                question: "Deriva: \\( f(x) = \\frac{1}{x} + 2x \\)",
+                answer: ["-1/x^2+2", "2-1/x^2", "2-\\frac{1}{x^2}"],
+                solution: "\\( f'(x) = -\\frac{1}{x^2} + 2 \\)",
+                hint: "Trasforma $1/x$ in $x^{-1}$.",
+                tag: "razionale"
             }
         ],
         medium: [
@@ -55,6 +111,62 @@ const exercises = {
                 solution: "\\( h'(x) = 20(2x-5)^9 \\)",
                 hint: "La derivata dell'interno $2x-5$ è 2.",
                 tag: "catena"
+            },
+            {
+                id: 104,
+                question: "Deriva: \\( f(x) = x^2 \\ln(x) \\)",
+                answer: ["2xln(x)+x", "2x\\ln(x)+x"],
+                solution: "Prodotto tra $x^2$ e $\\ln x$: \\( f'(x) = 2x\\ln(x) + x \\)",
+                hint: "Scrivi $u=x^2$ e $v=\\ln x$.",
+                tag: "prodotto"
+            },
+            {
+                id: 105,
+                question: "Deriva: \\( g(x) = \\frac{\\sin x}{x} \\)",
+                answer: ["(xcos(x)-sin(x))/x^2", "\\frac{x\\cos(x)-\\sin(x)}{x^2}"],
+                solution: "Quoziente: \\( g'(x) = \\frac{x\\cos x - \\sin x}{x^2} \\)",
+                hint: "Riscrivi come $\\sin x \cdot x^{-1}$ se preferisci.",
+                tag: "quoziente"
+            },
+            {
+                id: 106,
+                question: "Deriva: \\( h(x) = x e^{x^2} \\)",
+                answer: ["e^{x^2}+2x^2e^{x^2}", "e^{x^2}(1+2x^2)"],
+                solution: "Prodotto + catena: \\( h'(x) = e^{x^2} + 2x^2 e^{x^2} \\)",
+                hint: "Deriva $e^{x^2}$ usando la catena.",
+                tag: "prodotto"
+            },
+            {
+                id: 107,
+                question: "Deriva: \\( f(x) = \\ln(x^2 + 1) \\)",
+                answer: ["2x/(x^2+1)", "\\frac{2x}{x^2+1}"],
+                solution: "Catena su logaritmo: \\( f'(x) = \\frac{2x}{x^2 + 1} \\)",
+                hint: "Deriva l'interno $x^2+1$.",
+                tag: "catena"
+            },
+            {
+                id: 108,
+                question: "Deriva: \\( g(x) = \\frac{3x-1}{x+2} \\)",
+                answer: ["7/(x+2)^2", "\\frac{7}{(x+2)^2}"],
+                solution: "Quoziente con semplificazione: \\( g'(x) = \\frac{7}{(x+2)^2} \\)",
+                hint: "Applica $\\frac{u'v - uv'}{v^2}$.",
+                tag: "quoziente"
+            },
+            {
+                id: 109,
+                question: "Deriva: \\( h(x) = x^4 \\sin x \\)",
+                answer: ["4x^3sin(x)+x^4cos(x)", "x^3(4\\sin x + x\\cos x)"],
+                solution: "Prodotto: \\( h'(x) = 4x^3\\sin x + x^4\\cos x \\)",
+                hint: "Deriva $x^4$ e $\\sin x$ separatamente.",
+                tag: "prodotto"
+            },
+            {
+                id: 110,
+                question: "Deriva: \\( f(x) = e^{3x} \\cos x \\)",
+                answer: ["e^{3x}(3cos(x)-sin(x))", "e^{3x}(3\\cos x-\\sin x)"],
+                solution: "Prodotto e catena: \\( f'(x) = e^{3x}(3\\cos x - \\sin x) \\)",
+                hint: "Deriva l'esponenziale con la catena e il coseno.",
+                tag: "prodotto"
             }
         ],
         complex: [
@@ -73,6 +185,70 @@ const exercises = {
                 solution: "\\( g'(x) = e^{-x} \\left[\\frac{2x}{x^2 + 1} - \\ln(x^2 + 1)\\right] \\)",
                 hint: "Prodotto + catena.",
                 tag: "prodotto"
+            },
+            {
+                id: 203,
+                question: "Deriva: \\( f(x) = (x^2 + 1)^{3/2} \\)",
+                answer: ["3x*\\sqrt{x^2+1}", "3x\\sqrt{x^2+1}", "3x(x^2+1)^{1/2}"],
+                solution: "Potenza frazionaria: \\( f'(x) = 3x\\sqrt{x^2+1} \\)",
+                hint: "Scrivi $(x^2+1)^{3/2}$ e applica la catena.",
+                tag: "catena"
+            },
+            {
+                id: 204,
+                question: "Deriva: \\( g(x) = \\ln\\left(\\frac{x^2+1}{x-1}\\right) \\)",
+                answer: ["2x/(x^2+1)-1/(x-1)", "\\frac{2x}{x^2+1}-\\frac{1}{x-1}"],
+                solution: "Differenza di logaritmi: \\( g'(x) = \\frac{2x}{x^2+1} - \\frac{1}{x-1} \\)",
+                hint: "Usa $\\ln(a/b) = \\ln a - \\ln b$.",
+                tag: "logaritmo"
+            },
+            {
+                id: 205,
+                question: "Deriva: \\( h(x) = \\frac{\\sin(x^2)}{x} \\)",
+                answer: ["2cos(x^2)-sin(x^2)/x^2", "2\\cos(x^2)-\\frac{\\sin(x^2)}{x^2}"],
+                solution: "Prodotto con $x^{-1}$: \\( h'(x) = 2\\cos(x^2) - \\frac{\\sin(x^2)}{x^2} \\)",
+                hint: "Riscrivi come $\\sin(x^2) x^{-1}$.",
+                tag: "quoziente"
+            },
+            {
+                id: 206,
+                question: "Deriva: \\( f(x) = e^{x} \\sqrt{x^2+1} \\)",
+                answer: ["e^x(\\sqrt{x^2+1}+x/\\sqrt{x^2+1})", "e^x*(\\sqrt{x^2+1}+x/\\sqrt{x^2+1})"],
+                solution: "Prodotto + catena: \\( f'(x) = e^{x}\\left(\\sqrt{x^2+1} + \\frac{x}{\\sqrt{x^2+1}}\\right) \\)",
+                hint: "Deriva separatamente $e^x$ e la radice.",
+                tag: "prodotto"
+            },
+            {
+                id: 207,
+                question: "Deriva: \\( g(x) = (x^2 + 3x)e^{1/x} \\)",
+                answer: ["e^{1/x}((2x+3)-(x^2+3x)/x^2)", "e^{1/x}(2x+3-1-3/x)"],
+                solution: "Prodotto + catena: \\( g'(x) = e^{1/x}\\left((2x+3) - \\frac{x^2+3x}{x^2}\\right) \\)",
+                hint: "La derivata di $e^{1/x}$ è $e^{1/x}(-1/x^2)$.",
+                tag: "prodotto"
+            },
+            {
+                id: 208,
+                question: "Deriva: \\( h(x) = \\ln(\\sin x) \\)",
+                answer: ["cot(x)", "\\cot x", "\\frac{\\cos x}{\\sin x}"],
+                solution: "Catena su logaritmo: \\( h'(x) = \\cot x \\)",
+                hint: "Ricorda che $\\frac{d}{dx}\\ln u = u'/u$.",
+                tag: "logaritmo"
+            },
+            {
+                id: 209,
+                question: "Deriva: \\( f(x) = x^x \\)",
+                answer: ["x^x(\\ln x+1)", "x^x*(\\ln x+1)", "x^x(ln(x)+1)"],
+                solution: "Riscrivi $x^x = e^{x\\ln x}$: \\( f'(x) = x^x(\\ln x + 1) \\)",
+                hint: "Usa la derivata di $e^{u(x)}$ con $u = x\\ln x$.",
+                tag: "esponenziale"
+            },
+            {
+                id: 210,
+                question: "Deriva: \\( g(x) = \\frac{\\arctan x}{x} \\)",
+                answer: ["(x/(1+x^2)-\\arctan(x))/x^2", "\\frac{\\frac{x}{1+x^2}-\\arctan(x)}{x^2}"],
+                solution: "Quoziente: \\( g'(x) = \\frac{\\frac{x}{1+x^2} - \\arctan x}{x^2} \\)",
+                hint: "Applica $\\frac{u'v - uv'}{v^2}$ con $u=\\arctan x$.",
+                tag: "quoziente"
             }
         ]
     },
@@ -81,7 +257,7 @@ const exercises = {
         simple: [
             {
                 id: 1,
-                question: "Calcola: \\( \\lim_{x \\o 0} \\frac{\\sin x}{x} \\)",
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sin x}{x} \\)",
                 answer: ["1"],
                 solution: "Limite notevole: vale 1.",
                 hint: "Ricorda il limite notevole del seno.",
@@ -94,6 +270,54 @@ const exercises = {
                 solution: "Dividi numeratore e denominatore per $x$.",
                 hint: "Considera i termini di grado maggiore.",
                 tag: "razionali"
+            },
+            {
+                id: 3,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{1-\\cos x}{x^2} \\)",
+                answer: ["1/2", "0.5", "\\frac{1}{2}"],
+                solution: "Limite notevole ricavato dalla serie del coseno: vale $1/2$.",
+                hint: "Usa $1-\\cos x \\sim x^2/2$.",
+                tag: "notevoli"
+            },
+            {
+                id: 4,
+                question: "Calcola: \\( \\lim_{x \\to +\\infty} \\frac{3x^2 - x + 1}{x^2} \\)",
+                answer: ["3"],
+                solution: "Rapporto tra polinomi: conta solo il termine di grado massimo.",
+                hint: "Dividi tutto per $x^2$.",
+                tag: "razionali"
+            },
+            {
+                id: 5,
+                question: "Calcola: \\( \\lim_{x \\to -\\infty} \\frac{5x^3 + 2}{x^3} \\)",
+                answer: ["5"],
+                solution: "I termini di grado inferiore sono trascurabili: resta 5.",
+                hint: "Fattorizza $x^3$.",
+                tag: "razionali"
+            },
+            {
+                id: 6,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\tan x}{x} \\)",
+                answer: ["1"],
+                solution: "Limite notevole legato alla derivata del seno.",
+                hint: "Scrivi $\\tan x = \\frac{\\sin x}{\\cos x}$.",
+                tag: "notevoli"
+            },
+            {
+                id: 7,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sqrt{1+x}-1}{x} \\)",
+                answer: ["1/2", "0.5", "\\frac{1}{2}"],
+                solution: "Razionalezza o usa lo sviluppo: vale $1/2$.",
+                hint: "Moltiplica per la coniugata $\\sqrt{1+x}+1$.",
+                tag: "radicali"
+            },
+            {
+                id: 8,
+                question: "Calcola: \\( \\lim_{x \\to +\\infty} \\frac{\\ln x}{x} \\)",
+                answer: ["0"],
+                solution: "Il logaritmo cresce più lentamente di una potenza positiva.",
+                hint: "Confronta ordini di infinito.",
+                tag: "logaritmi"
             }
         ],
         medium: [
@@ -112,6 +336,54 @@ const exercises = {
                 solution: "Limite notevole dell'esponenziale.",
                 hint: "Espansione di Taylor del numeratore.",
                 tag: "notevoli"
+            },
+            {
+                id: 103,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sin(2x)}{x} \\)",
+                answer: ["2"],
+                solution: "Usa il limite notevole $\\sin u / u$ con $u = 2x$.",
+                hint: "Moltiplica e dividi per 2.",
+                tag: "notevoli"
+            },
+            {
+                id: 104,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \\)",
+                answer: ["1"],
+                solution: "Serie di Taylor del logaritmo: $\\ln(1+x) \\sim x$.",
+                hint: "Ricorda lo sviluppo di $\\ln(1+x)$.",
+                tag: "logaritmi"
+            },
+            {
+                id: 105,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{(1+x)^5 - 1}{x} \\)",
+                answer: ["5"],
+                solution: "Espansione binomiale o derivata in zero: risulta 5.",
+                hint: "Sviluppa $(1+x)^5$ fino al termine lineare.",
+                tag: "binomio"
+            },
+            {
+                id: 106,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{e^{2x} - 1 - 2x}{x^2} \\)",
+                answer: ["2"],
+                solution: "Serie di Taylor: $e^{2x} = 1 + 2x + 2x^2 + ...$, quindi il limite vale 2.",
+                hint: "Isola i primi tre termini dello sviluppo.",
+                tag: "taylor"
+            },
+            {
+                id: 107,
+                question: "Calcola: \\( \\lim_{x \\to +\\infty} \\left(1 + \\frac{2}{x}\\right)^x \\)",
+                answer: ["e^2", "e^{2}"],
+                solution: "Limite esponenziale: tende a $e^{2}$.",
+                hint: "Scrivi l'espressione come $e^{x\\ln(1+2/x)}$.",
+                tag: "esponenziali"
+            },
+            {
+                id: 108,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sqrt{1+3x} - 1}{x} \\)",
+                answer: ["3/2", "1.5", "\\frac{3}{2}"],
+                solution: "Razionalezza o usa lo sviluppo della radice: risultato $3/2$.",
+                hint: "Moltiplica per la coniugata $\\sqrt{1+3x}+1$.",
+                tag: "radicali"
             }
         ],
         complex: [
@@ -121,6 +393,70 @@ const exercises = {
                 answer: ["-1/2", "-0.5", "-\\frac{1}{2}"],
                 solution: "Sviluppi di Taylor: $\\ln(1+x) = x - x^2/2 + ...$, $\\sin x = x - x^3/6 + ...$, quindi risulta $-1/2$.",
                 hint: "Usa gli sviluppi di Taylor fino al secondo ordine.",
+                tag: "taylor"
+            },
+            {
+                id: 202,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{e^x - 1 - x - x^2/2}{x^3} \\)",
+                answer: ["1/6", "0.1666", "\\frac{1}{6}"],
+                solution: "Serie di Taylor di $e^x$: il termine dominante è $x^3/6$.",
+                hint: "Espandi $e^x$ fino al terzo ordine.",
+                tag: "taylor"
+            },
+            {
+                id: 203,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\tan x - x}{x^3} \\)",
+                answer: ["1/3", "0.333", "\\frac{1}{3}"],
+                solution: "$\\tan x = x + x^3/3 + ...$, quindi il limite vale $1/3$.",
+                hint: "Ricorri allo sviluppo di $\\tan x$.",
+                tag: "taylor"
+            },
+            {
+                id: 204,
+                question: "Calcola: \\( \\lim_{x \\to 0^+} x\\ln x \\)",
+                answer: ["0"],
+                solution: "Il logaritmo va a $-\\infty$ ma il prodotto con $x$ tende a 0.",
+                hint: "Applica l'Hôpital o ricorda che $x^a\\ln x \\to 0$.",
+                tag: "logaritmi"
+            },
+            {
+                id: 205,
+                question: "Calcola: \\( \\lim_{x \\to +\\infty} x(\\sqrt{x^2+1} - x) \\)",
+                answer: ["1/2", "0.5", "\\frac{1}{2}"],
+                solution: "Moltiplica e dividi per la coniugata per ottenere $\\frac{1}{\\sqrt{x^2+1}+x}$.",
+                hint: "Usa la coniugata della radice.",
+                tag: "radicali"
+            },
+            {
+                id: 206,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\ln(1+x) - x + x^2/2}{x^3} \\)",
+                answer: ["1/3", "0.333", "\\frac{1}{3}"],
+                solution: "Serie del logaritmo: il termine successivo vale $x^3/3$.",
+                hint: "Espandi fino al terzo ordine.",
+                tag: "taylor"
+            },
+            {
+                id: 207,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sqrt{1+x} - 1 - x/2}{x^2} \\)",
+                answer: ["-1/8", "-0.125", "-\\frac{1}{8}"],
+                solution: "Espansione della radice: $\\sqrt{1+x} = 1 + x/2 - x^2/8 + ...$.",
+                hint: "Usa la serie binomiale.",
+                tag: "radicali"
+            },
+            {
+                id: 208,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\arctan x - x}{x^3} \\)",
+                answer: ["-1/3", "-0.333", "-\\frac{1}{3}"],
+                solution: "$\\arctan x = x - x^3/3 + ...$, quindi il limite vale $-1/3$.",
+                hint: "Ricorda lo sviluppo di $\\arctan x$.",
+                tag: "taylor"
+            },
+            {
+                id: 209,
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{e^{x} - e^{-x} - 2x}{x^3} \\)",
+                answer: ["1/3", "0.333", "\\frac{1}{3}"],
+                solution: "Differenza di esponenziali: restano i termini $x^3/3$.",
+                hint: "Espandi $e^x$ ed $e^{-x}$.",
                 tag: "taylor"
             }
         ]
@@ -143,13 +479,61 @@ const exercises = {
                 solution: "Gli zeri sono $0$ e $3$. La funzione è positiva per $x < 0$ e $x > 3$.",
                 hint: "Analizza il segno dei fattori rispetto agli zeri 0 e 3.",
                 tag: "segno"
+            },
+            {
+                id: 3,
+                question: "Determina il dominio di \\( f(x) = \\sqrt{2x-5} \\)",
+                answer: ["x>=5/2", "x>=2.5", "x\\geq\\frac{5}{2}", "[5/2,+inf)", "[\\frac{5}{2},+\\infty)"],
+                solution: "Serve $2x-5 \ge 0$: quindi $x \ge 5/2$.",
+                hint: "Imponi che l'argomento della radice sia non negativo.",
+                tag: "dominio"
+            },
+            {
+                id: 4,
+                question: "Determina il dominio di \\( f(x) = \\ln(x-1) \\)",
+                answer: ["x>1", "(1,+inf)", "(1,+\\infty)", "x\\in(1,+\\infty)"],
+                solution: "Il logaritmo naturale richiede $x-1>0$, quindi $x>1$.",
+                hint: "Ricorda che l'argomento del logaritmo deve essere positivo.",
+                tag: "dominio"
+            },
+            {
+                id: 5,
+                question: "Individua gli zeri di \\( f(x) = x^2 - 9 \\) (usa ';' per separare).",
+                answer: ["x=3; x=-3", "3; -3", "x=\\pm3"],
+                solution: "Risolvi $x^2-9=0$: ottieni $x=\\pm3$.",
+                hint: "Scomponi come $(x-3)(x+3)=0$.",
+                tag: "zeri"
+            },
+            {
+                id: 6,
+                question: "Indica dove \\( f(x) = -x + 4 \\) è positiva.",
+                answer: ["x<4", "(-inf,4)", "(-\\infty,4)", "positiva per x<4"],
+                solution: "Risolvi $-x + 4 > 0$: ottieni $x < 4$.",
+                hint: "Isola $x$ nell'inequazione lineare.",
+                tag: "segno"
+            },
+            {
+                id: 7,
+                question: "Determina il dominio di \\( f(x) = \\frac{1}{x^2-4} \\)",
+                answer: ["x\\neq\\pm2", "x\\neq2 e x\\neq-2", "\\mathbb{R}\\setminus\\{-2,2\\}", "tutti tranne ±2"],
+                solution: "Il denominatore si annulla per $x=\\pm2$.",
+                hint: "Poni $x^2-4 \\neq 0$.",
+                tag: "dominio"
+            },
+            {
+                id: 8,
+                question: "Indica dove \\( f(x) = (x+1)(x-2) \\) è negativa (usa U per unione).",
+                answer: ["(-1,2)", "(-1,2)", "-1<x<2"],
+                solution: "Gli zeri sono $-1$ e $2$. Il prodotto è negativo tra gli zeri.",
+                hint: "Studia il segno di ciascun fattore lungo la retta reale.",
+                tag: "segno"
             }
         ],
         medium: [
             {
                 id: 101,
                 question: "Indica dove \\( f(x) = x^3 - 3x \\) è crescente (usa U per unione).",
-                answer: ["crescente su (-inf,-1)u(1,inf)", "(-inf,-1)u(1,inf)", "crescente:\\ (-inf,-1)u(1,inf)", "x<-1 o x>1"],
+                answer: ["crescente su (-inf,-1)u(1,inf)", "(-\\infty,-1)u(1,\\infty)", "crescente:\\ (-inf,-1)u(1,inf)", "x<-1 o x>1"],
                 solution: "Calcola la derivata $f'(x) = 3x^2 - 3 = 3(x-1)(x+1)$: è positiva per $x<-1$ e $x>1$ (crescente) e negativa su (-1,1) (decrescente).",
                 hint: "Studia il segno della derivata prima.",
                 tag: "monotonia"
@@ -161,6 +545,62 @@ const exercises = {
                 solution: "Asintoto verticale in $x=1$; divisione: $f(x) = x+1 + \\frac{2}{x-1}$ produce l'obliquo $y = x + 1$.",
                 hint: "Esegui la divisione polinomiale.",
                 tag: "asintoti"
+            },
+            {
+                id: 103,
+                question: "Trova i punti stazionari di \\( f(x) = x^3 - 6x \\) (usa ';' per separare).",
+                answer: ["x=-\\sqrt{2}; x=\\sqrt{2}", "x=\\pm\\sqrt{2}", "-sqrt(2); sqrt(2)"],
+                solution: "$f'(x) = 3x^2 - 6 = 3(x^2-2)$: gli zeri sono $x = \\pm\\sqrt{2}$.",
+                hint: "Calcola la derivata prima e imponi $f'(x)=0$.",
+                tag: "critici"
+            },
+            {
+                id: 104,
+                question: "Determina il dominio di \\( f(x) = \\frac{\\sqrt{x-1}}{x-4} \\)",
+                answer: ["x>=1 e x!=4", "x\\geq1, x\\neq4", "[1,+inf)\\setminus\\{4\\}"],
+                solution: "Serve $x-1 \ge 0$ e $x-4 \neq 0$: quindi $x \ge 1$ con esclusione di $x=4$.",
+                hint: "Interseca le condizioni di radice e denominatore.",
+                tag: "dominio"
+            },
+            {
+                id: 105,
+                question: "Indica dove \\( f(x) = \\frac{x^2-9}{x-1} \\) è positiva (usa U per unione).",
+                answer: ["(-inf,-3)u(1,3)u(3,inf)", "(-\\infty,-3)u(1,3)u(3,\\infty)", "x<-3 o 1<x<3 o x>3"],
+                solution: "Studia il segno dei fattori $(x-3)(x+3)$ e del denominatore $x-1$.",
+                hint: "Traccia una tabella dei segni considerando gli zeri -3, 1, 3.",
+                tag: "segno"
+            },
+            {
+                id: 106,
+                question: "Indica dove \\( f(x) = \\frac{x}{x^2+1} \\) è crescente (usa U per unione).",
+                answer: ["(-1,1)", "crescente su (-1,1)", "-1<x<1"],
+                solution: "Deriva: $f'(x) = \\frac{1-x^2}{(x^2+1)^2}$, positiva per $|x|<1$.",
+                hint: "Deriva e analizza il segno di $f'$.",
+                tag: "monotonia"
+            },
+            {
+                id: 107,
+                question: "Elenca gli asintoti di \\( f(x) = \\frac{2x^2+1}{x^2+1} \\) separandoli con ';'.",
+                answer: ["nessun verticale; orizzontale y=2", "orizzontale y=2; nessun verticale"],
+                solution: "Il dominio è tutto $\\mathbb{R}$, quindi nessun asintoto verticale; per $x \to \pm\\infty$ la funzione tende a 2.",
+                hint: "Confronta i gradi di numeratore e denominatore.",
+                tag: "asintoti"
+            },
+            {
+                id: 108,
+                question: "Trova le intersezioni con gli assi di \\( f(x) = e^x - 1 \\) (usa ';').",
+                answer: ["asse x: x=0; asse y: y=0", "x=0; y=0"],
+                solution: "$f(x)=0$ solo per $x=0$ e $f(0)=0$, quindi l'intersezione coincide con l'origine.",
+                hint: "Imponi $f(x)=0$ e calcola $f(0)$.",
+                tag: "intersezioni"
+            },
+            {
+                id: 109,
+                question: "Determina il dominio di \\( f(x) = \\ln(x^2-4) \\)",
+                answer: ["(-inf,-2)u(2,inf)", "(-\\infty,-2)u(2,\\infty)", "x<-2 o x>2"],
+                solution: "Il logaritmo richiede $x^2-4>0$: quindi $x<-2$ oppure $x>2$.",
+                hint: "Studia il segno di $x^2-4$.",
+                tag: "dominio"
             }
         ],
         complex: [
@@ -171,70 +611,63 @@ const exercises = {
                 solution: "$f''(x) = 12x^2 - 8 = 4(3x^2-2)$. Gli zeri sono $x = \\pm\\sqrt{2/3}$: la funzione è convessa dove $f''>0$ e concava dove $f''<0$.",
                 hint: "Studia il segno della derivata seconda.",
                 tag: "concavita"
-            }
-        ]
-    }
-};
-
-const theoryContent = {
-    derivate: {
-        overview: [
-            `Le derivate sono come una lente d'ingrandimento che ci permette di osservare il comportamento di una funzione in un punto preciso. Se una funzione descrive un fenomeno – l'altezza di un razzo, la temperatura di un metallo o il costo di produzione di un'azienda – la derivata ci dice come quel fenomeno sta cambiando proprio in quell'istante. È il ritmo del cambiamento, la velocità con cui il grafico sale o scende, il modo in cui una curva si piega mentre la osserviamo.`,
-            `Per immaginare una derivata pensa a una strada di montagna. La funzione è il percorso che stiamo seguendo, mentre la derivata è l'inclinazione della strada sotto le nostre ruote. Una pendenza positiva indica che stiamo salendo, una negativa che stiamo scendendo. Se la derivata vale zero, la strada è in piano: siamo arrivati su un valico o in un punto di svolta. Questa visione geometrica lega le derivate alla tangente, la retta che tocca il grafico senza attraversarlo: la sua inclinazione coincide con il valore della derivata.`,
-            `Dal punto di vista analitico la derivata nasce dal limite del rapporto incrementale. Consideriamo due punti vicini della funzione, distanti di un piccolissimo \( h \). Il rapporto \( \frac{f(x+h) - f(x)}{h} \) misura quanto cambia il valore della funzione rispetto alla variazione di input. Facendo tendere \( h \) a zero chiediamo: "Qual è la variazione istantanea?". Se il limite esiste otteniamo \( f'(x) \), la derivata di \( f \) nel punto \( x \). È come passare da una fotografia sfocata a una nitidissima, eliminando tutti i movimenti superflui.`,
-            `La derivata non esiste sempre. Spigoli, cuspidi o buchi nel grafico rompono la continuità necessaria. Pensiamo al valore assoluto \( f(x) = |x| \): la pendenza a sinistra dello zero è -1, quella a destra è +1, ma al centro non esiste un unico valore di pendenza. Questo ricorda che la derivata è uno strumento delicato: prima di usarla dobbiamo verificare che la funzione sia abbastanza liscia e che il limite sia definito.`,
-            `Una volta che la derivata è definita possiamo interpretarla in mille modi. In fisica è la velocità (derivata dello spostamento), poi l'accelerazione (derivata della velocità). In economia indica il margine di guadagno quando produciamo una unità in più. In biologia descrive la crescita istantanea di una popolazione batterica. In tutti i casi, la derivata racconta come una quantità reagisce a una piccola perturbazione.`,
-            `Ricordiamo anche che le derivate funzionano come un linguaggio: attraverso loro possiamo risolvere equazioni, trovare massimi e minimi, costruire approssimazioni locali tramite polinomi di Taylor. È il ponte che unisce l'analisi dei grafici alla comprensione profonda dei processi dinamici, permettendoci di prevedere e controllare ciò che accade.`
-        ],
-        sections: [
-            {
-                title: "Dal rapporto incrementale alla tangente",
-                paragraphs: [
-                    `Per capire perché il limite \( \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \) è così importante immagina di voler misurare la velocità di un'auto senza un tachimetro. Potresti segnare su un taccuino le distanze percorse ogni secondo e calcolare quanto spazio hai coperto in un intervallo \( h \). Più restringi l'intervallo, più il tuo valore si avvicina alla velocità reale. Questo processo di raffinamento è esattamente ciò che fa il limite nella definizione di derivata.`,
-                    `Dal punto di vista geometrico il limite crea la tangente alla curva. Prendiamo due punti \( A(x, f(x)) \) e \( B(x+h, f(x+h)) \). La retta secante che li congiunge ha pendenza pari al rapporto incrementale. Quando \( h \) diventa sempre più piccolo, il punto B scivola verso A e la secante ruota fino a diventare tangente. La derivata è la pendenza di quella tangente, la migliore approssimazione lineare della funzione vicino al punto considerato.`
-                ],
-                list: [
-                    `Scrivi il rapporto incrementale \( \frac{f(x+h) - f(x)}{h} \)` ,
-                    `Semplifica se possibile, sfruttando la struttura della funzione` ,
-                    `Calcola il limite per \( h \to 0 \) per ottenere \( f'(x) \)` ,
-                    `Interpreta il risultato come pendenza della tangente o velocità istantanea`
-                ]
             },
             {
-                title: "Regole operative e strategie",
-                paragraphs: [
-                    `Sebbene la definizione di derivata passi dai limiti, nella pratica quotidiana utilizziamo un set di regole che rende i calcoli rapidi. Sono come gli attrezzi di una cassetta: ognuno serve a risolvere un tipo di problema e spesso li usiamo in combinazione. Ricordando poche formule fondamentali possiamo derivare polinomi, funzioni trigonometriche, esponenziali, logaritmi e loro composizioni.`,
-                    `Le regole si basano sulle proprietà del limite e dell'algebra delle funzioni. Ad esempio la derivata della somma è la somma delle derivate, la derivata del prodotto \( (fg)' = f'g + fg' \) segue la logica della distribuzione delle variazioni tra i due fattori, mentre la regola della catena \( (f \circ g)'(x) = f'(g(x)) \cdot g'(x) \) ci ricorda che quando un processo è composto da più fasi dobbiamo moltiplicare le velocità di ciascun passaggio.`
-                ],
-                list: [
-                    `Regola della potenza: \( \frac{d}{dx} x^n = n x^{n-1} \)` ,
-                    `Derivate fondamentali: \( (e^x)' = e^x \), \( (\ln x)' = \frac{1}{x} \), \( (\sin x)' = \cos x \), \( (\cos x)' = -\sin x \)` ,
-                    `Regola del prodotto e del quoziente per combinare funzioni` ,
-                    `Regola della catena per funzioni composte` ,
-                    `Uso di trasformazioni (ad esempio logaritmi) per semplificare casi complessi`
-                ]
+                id: 202,
+                question: "Trova i punti di flesso di \\( f(x) = x^3 - 3x \\) (indica le ascisse).",
+                answer: ["x=0", "0"],
+                solution: "$f''(x) = 6x$ cambia segno solo in $x=0$, quindi lì c'è un flesso.",
+                hint: "Calcola $f''$ e verifica il cambio di concavità.",
+                tag: "flessi"
             },
             {
-                title: "Applicazioni e interpretazioni",
-                paragraphs: [
-                    `Le derivate ci guidano nell'identificazione di massimi e minimi: punti in cui la funzione cambia direzione. Analizzando \( f'(x) = 0 \) e studiandone il segno possiamo capire se un punto è un picco, una valle o un flesso. Con la derivata seconda \( f''(x) \) valutiamo quanto la curva si incurva, distinguendo concavità e convessità e prevedendo la stabilità di un sistema.`,
-                    `Oltre alla geometria, la derivata appare quando vogliamo ottimizzare. In economia significa trovare il prezzo che massimizza il profitto; in ingegneria scegliere la forma di un componente che riduce la resistenza; in informatica addestrare una rete neurale aggiornando i pesi lungo la direzione del gradiente. Ogni volta che cerchiamo "la migliore scelta locale", le derivate sono lo strumento che ci indica la direzione.`
-                ],
-                list: [
-                    `Ottimizzazione di funzioni: analisi di \( f'(x) = 0 \) e studio del segno di \( f''(x) \)` ,
-                    `Approssimazioni locali tramite polinomi di Taylor` ,
-                    `Studio del moto: posizione, velocità, accelerazione` ,
-                    `Analisi di sensibilità: come cambia un risultato al variare di un parametro` ,
-                    `Controllo di sistemi dinamici e previsione di trend`
-                ]
+                id: 203,
+                question: "Elenca gli asintoti di \\( f(x) = \\frac{x^3}{x^2-1} \\) separandoli con ';'.",
+                answer: ["verticali x=-1,x=1; obliquo y=x", "x=-1; x=1; y=x"],
+                solution: "Il denominatore si annulla in $x=\\pm1$ (asintoti verticali); la divisione mostra un asintoto obliquo $y = x$.",
+                hint: "Esegui la divisione tra polinomi.",
+                tag: "asintoti"
+            },
+            {
+                id: 204,
+                question: "Indica dove \\( f(x) = \\frac{x^2-1}{x^2+1} \\) è crescente (usa U per unione).",
+                answer: ["(0,inf)", "crescente su (0,inf)", "x>0"],
+                solution: "Deriva: $f'(x) = \\frac{4x}{(x^2+1)^2}$, positiva per $x>0$ e negativa per $x<0$.",
+                hint: "Studia il segno della derivata prima.",
+                tag: "monotonia"
+            },
+            {
+                id: 205,
+                question: "Classifica i punti critici di \\( f(x) = x^4 - 4x^2 + 1 \\) (usa ';').",
+                answer: ["x=0 massimo locale; x=-\\sqrt{2} minimo locale; x=\\sqrt{2} minimo locale", "max a x=0; min a x=\\pm\\sqrt{2}"],
+                solution: "$f'(x) = 4x(x^2-2)$ fornisce $x=0,\\pm\\sqrt{2}$. La derivata seconda vale $f''(0)=-8<0$ (massimo) e $f''(\\pm\\sqrt{2})=16>0$ (minimi).",
+                hint: "Usa il test della derivata seconda.",
+                tag: "ottimizzazione"
+            },
+            {
+                id: 206,
+                question: "Indica dominio e asintoti verticali di \\( f(x) = \\ln(x^2-1) \\) (usa ';').",
+                answer: ["dominio: (-inf,-1)u(1,inf); verticali x=-1,x=1", "(-\\infty,-1)u(1,\\infty); x=-1; x=1"],
+                solution: "Serve $x^2-1>0$ quindi $x<-1$ o $x>1$; ai bordi compaiono asintoti verticali.",
+                hint: "Imponi l'argomento del logaritmo positivo.",
+                tag: "dominio"
+            },
+            {
+                id: 207,
+                question: "Descrivi concavità e convessità di \\( f(x) = \\frac{1}{x^2-1} \\) (usa ';').",
+                answer: ["convessa su (-inf,-1)u(1,inf); concava su (-1,1)", "convessa: (-inf,-1)u(1,inf); concava: (-1,1)"],
+                solution: "$f''(x) = \\frac{2(3x^2+1)}{(x^2-1)^3}$ ha segno come $(x^2-1)$, quindi concava su (-1,1) e convessa fuori.",
+                hint: "Calcola $f''$ e analizza il denominatore.",
+                tag: "concavita"
+            },
+            {
+                id: 208,
+                question: "Trova il massimo assoluto di \\( f(x) = x e^{-x} \\) per $x>0$ (rispondi con 'x=...; f=...').",
+                answer: ["x=1; f=1/e", "x=1; f=\\frac{1}{e}"],
+                solution: "$f'(x) = e^{-x}(1-x)$ si annulla a $x=1$ e $f''(1)=-e^{-1}<0$: massimo con valore $1/e$.",
+                hint: "Deriva e utilizza il test della derivata seconda.",
+                tag: "ottimizzazione"
             }
-        ],
-        keyTakeaways: [
-            `La derivata è il limite del rapporto incrementale e misura il cambiamento istantaneo.`,
-            `La pendenza della tangente al grafico nel punto \( x \) coincide con \( f'(x) \).`,
-            `Le regole operative (somma, prodotto, catena) permettono di derivare funzioni complesse.`,
-            `La derivata seconda descrive la curvatura e aiuta a classificare massimi, minimi e flessi.`,
-            `Comprendere le derivate significa saper leggere e controllare fenomeni dinamici del mondo reale.`
         ]
     },
     limiti: {
