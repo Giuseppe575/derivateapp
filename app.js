@@ -81,7 +81,7 @@ const exercises = {
         simple: [
             {
                 id: 1,
-                question: "Calcola: \\( \\lim_{x \\o 0} \\frac{\\sin x}{x} \\)",
+                question: "Calcola: \\( \\lim_{x \\to 0} \\frac{\\sin x}{x} \\)",
                 answer: ["1"],
                 solution: "Limite notevole: vale 1.",
                 hint: "Ricorda il limite notevole del seno.",
@@ -212,6 +212,41 @@ const theoryContent = {
                     `Regola del prodotto e del quoziente per combinare funzioni` ,
                     `Regola della catena per funzioni composte` ,
                     `Uso di trasformazioni (ad esempio logaritmi) per semplificare casi complessi`
+                ],
+                tables: [
+                    {
+                        title: `Derivate di funzioni elementari`,
+                        headers: [`Funzione`, `Derivata`],
+                        rows: [
+                            [`\\( c \\)`, `\\( 0 \\)`],
+                            [`\\( x^n \\)`, `\\( n x^{n-1} \\)`],
+                            [`\\( \\sqrt{x} \\)`, `\\( \\frac{1}{2\\sqrt{x}} \\)`],
+                            [`\\( \\frac{1}{x} \\)`, `\\( -\\frac{1}{x^2} \\)`],
+                            [`\\( e^x \\)`, `\\( e^x \\)`],
+                            [`\\( a^x \\)`, `\\( a^x \\ln a \\)`],
+                            [`\\( \\ln x \\)`, `\\( \\frac{1}{x} \\)`],
+                            [`\\( \\log_a x \\)`, `\\( \\frac{1}{x \\ln a} \\)`],
+                            [`\\( \\sin x \\)`, `\\( \\cos x \\)`],
+                            [`\\( \\cos x \\)`, `\\( -\\sin x \\)`],
+                            [`\\( \\tan x \\)`, `\\( \\frac{1}{\\cos^2 x} \\)`],
+                            [`\\( \\arcsin x \\)`, `\\( \\frac{1}{\\sqrt{1 - x^2}} \\)`],
+                            [`\\( \\arccos x \\)`, `\\( -\\frac{1}{\\sqrt{1 - x^2}} \\)`],
+                            [`\\( \\arctan x \\)`, `\\( \\frac{1}{1 + x^2} \\)`]
+                        ]
+                    },
+                    {
+                        title: `Combinazioni di funzioni`,
+                        headers: [`Operazione`, `Regola`],
+                        rows: [
+                            [`\\( (f + g)' \\)`, `\\( f' + g' \\)`],
+                            [`\\( (cf)' \\)`, `\\( c \\cdot f' \\)`],
+                            [`\\( (fg)' \\)`, `\\( f'g + fg' \\)`],
+                            [`\\( \\left( \\frac{f}{g} \\right)' \\)`, `\\( \\frac{f'g - fg'}{g^2} \\)`],
+                            [`\\( (f \\circ g)'(x) \\)`, `\\( f'(g(x)) \\cdot g'(x) \\)`],
+                            [`\\( (f^{-1})'(y) \\)`, `\\( \\frac{1}{f'(x)} \\) con \\( x = f^{-1}(y) \\)`]
+                        ],
+                        note: `Le regole valgono dove le funzioni coinvolte sono derivabili e le espressioni hanno senso.`
+                    }
                 ]
             },
             {
@@ -258,6 +293,50 @@ const theoryContent = {
                     `Razionalizzazione di radici e denominatori` ,
                     `Uso di sviluppi di Taylor per isolare il termine dominante` ,
                     `Applicazione della regola di de l'Hospital quando è presente la forma \( \frac{0}{0} \) o \( \frac{\infty}{\infty} \)`
+                ]
+            },
+            {
+                title: "Regole e limiti notevoli a colpo d'occhio",
+                paragraphs: [
+                    `Avere sott'occhio le principali proprietà permette di riconoscere rapidamente la strategia da adottare. La tabella che segue riassume le regole algebriche di base, i limiti notevoli più usati e come trasformare le forme indeterminate più comuni.`
+                ],
+                tables: [
+                    {
+                        title: `Proprietà algebriche dei limiti`,
+                        headers: [`Operazione`, `Regola`],
+                        rows: [
+                            [`Somma`, `\\( \\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x) \\)`],
+                            [`Prodotto`, `\\( \\lim_{x \\to a} f(x)g(x) = (\\lim_{x \\to a} f(x))(\\lim_{x \\to a} g(x)) \\)`],
+                            [`Quoziente`, `\\( \\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim f}{\\lim g} \\) con \\( \\lim_{x \\to a} g(x) \\neq 0 \\)`],
+                            [`Potenza`, `\\( \\lim_{x \\to a} [f(x)]^n = (\\lim_{x \\to a} f(x))^n \\)`],
+                            [`Composizione`, `Se \\( g(x) \\to L \\) e \\( f \\) è continua in \\( L \\) allora \\( \\lim_{x \\to a} f(g(x)) = f(L) \\)`]
+                        ],
+                        note: `Le proprietà valgono quando i limiti coinvolti esistono ed eventualmente sono finiti.`
+                    },
+                    {
+                        title: `Limiti notevoli da ricordare`,
+                        headers: [`Espressione`, `Valore`],
+                        rows: [
+                            [`\\( \\lim_{x \\to 0} \\frac{\\sin x}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} \\)`, `\\( \\tfrac{1}{2} \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{\\tan x}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{e^x - 1}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \\)`, `\\( 1 \\)`],
+                            [`\\( \\lim_{x \\to +\\infty} \\(1 + \\frac{1}{x}\\)^x \\)`, `\\( e \\)`],
+                            [`\\( \\lim_{x \\to 0} (1+x)^{1/x} \\)`, `\\( e \\)`]
+                        ]
+                    },
+                    {
+                        title: `Strategie per forme indeterminate`,
+                        headers: [`Situazione`, `Trasformazione utile`],
+                        rows: [
+                            [`\\( \\frac{0}{0} \\) o \\( \\frac{\\infty}{\\infty} \\)`, `Fattorizza, semplifica o applica de l'Hospital`],
+                            [`\\( 0 \\cdot \\infty \\)`, `Raccogli o riscrivi come quoziente per applicare le regole precedenti`],
+                            [`\\( \\infty - \\infty \\)`, `Razionalizza, porta a comune denominatore o sfrutta gerarchie di crescita`],
+                            [`\\( 0^0, 1^{\\infty}, \\infty^0 \\)`, `Prendi il logaritmo, usa l'esponenziale e converti in prodotto/quoziente`],
+                            [`Radicali`, `Moltiplica per la coniugata per eliminare la radice dal numeratore o dal denominatore`]
+                        ]
+                    }
                 ]
             },
             {
@@ -317,6 +396,21 @@ const theoryContent = {
                     `Dividi il dominio in intervalli e valuta il segno della funzione` ,
                     `Analizza il segno della derivata prima per determinare crescita e decrescita` ,
                     `Combina le informazioni per prevedere la forma del grafico`
+                ],
+                tables: [
+                    {
+                        title: `Schema operativo per lo studio di funzione`,
+                        headers: [`Passaggio`, `Cosa controllare`],
+                        rows: [
+                            [`Dominio`, `Escludi denominatori nulli, argomenti negativi di radici pari, logaritmi con argomento non positivo.`],
+                            [`Intersezioni`, `Calcola \( f(0) \) e risolvi \( f(x) = 0 \) per trovare eventuali incroci con gli assi.`],
+                            [`Segno`, `Costruisci la tabella dei segni usando zeri e punti critici del dominio per capire dove \( f(x) \) è positiva o negativa.`],
+                            [`Derivata prima`, `Trova \( f'(x) \), studiane il segno e individua massimi/minimi relativi e punti stazionari.`],
+                            [`Derivata seconda`, `Analizza \( f''(x) \) per concavità e flessi, verificando eventuali cambi di segno.`],
+                            [`Limiti`, `Valuta i limiti ai bordi del dominio e all'infinito per trovare asintoti e comportamenti estremi.`],
+                            [`Sintesi grafica`, `Riassumi le informazioni in un grafico qualitativo indicando punti notevoli, tratti crescenti/decrescenti e concavità.`]
+                        ]
+                    }
                 ]
             },
             {
@@ -713,6 +807,18 @@ function renderTheory(topicKey) {
             <h4>${section.title}</h4>
             ${(section.paragraphs || []).map(text => `<p>${text}</p>`).join('')}
             ${section.list ? `<ul>${section.list.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+            ${(section.tables || []).map(table => `
+                <div class="theory-table">
+                    ${table.title ? `<h5>${table.title}</h5>` : ''}
+                    <table>
+                        ${table.headers ? `<thead><tr>${table.headers.map(header => `<th>${header}</th>`).join('')}</tr></thead>` : ''}
+                        <tbody>
+                            ${(table.rows || []).map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}
+                        </tbody>
+                    </table>
+                    ${table.note ? `<p class="table-note">${table.note}</p>` : ''}
+                </div>
+            `).join('')}
         </section>
     `).join('');
     const takeaways = (content.keyTakeaways || []).map(point => `<li>${point}</li>`).join('');
